@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Contact DeviceLab India about device evaluation and research access."><meta name="theme-color" content="#0a1020"><title>Contact — DeviceLab India</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"></head>
 <body class="light-page"><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="38" height="38"><span>DeviceLab<span class="brand-light"> India</span></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav"><a href="devices.html">Devices & testing</a><a href="research.html">Research</a><a href="methodology.html">Methodology</a><a href="about.html">About</a><a class="nav-cta" href="contact.html">Collaborate</a></nav></header>
 <main id="main" class="section-wrap"><section class="page-hero"><p class="eyebrow">Contact & collaboration</p><h1>Let's discuss a<br><span class="gradient-text">defined evaluation.</span></h1><p>For product teams, communications teams and research-access enquiries. Device loans are subject to a feasible scope and agreed terms.</p></section>
-<div class="form-shell"><div class="note-box contact-address-card"><strong>Official project contact</strong><p><a class="contact-email" href="mailto:devicelabindia.research@gmail.com">devicelabindia.research@gmail.com</a></p><p>The form prepares an email in your email application; it does not send or store data on this website.</p></div>
+<div class="form-shell"><div class="note-box contact-address-card"><strong>Official project contact</strong><p><a class="contact-email" href="mailto:devicelabindia.research@gmail.com">devicelabindia.research@gmail.com</a></p><p>The form opens a pre-filled Gmail draft. It does not send or store data on this website.</p></div>
 <div class="form-card"><form id="contact-form">
 <label for="name">Name</label><input id="name" name="name" autocomplete="name" required>
 <label for="organisation">Organisation / company (optional)</label><input id="organisation" name="organisation" autocomplete="organization">
@@ -10,7 +10,7 @@
 <label for="topic">Enquiry type</label><select id="topic" name="topic"><option>Device evaluation loan</option><option>Research collaboration</option><option>Methodology question</option><option>Other</option></select>
 <label for="message">Message</label><textarea id="message" name="message" required placeholder="Tell us the device or research area you would like to discuss."></textarea>
 <button class="button button-primary" type="submit">Prepare email ↗</button>
-<p class="form-help">Submitting opens a draft in your default email application. No form information is stored by this static website.</p>
+<p class="form-help">Submitting opens a pre-filled Gmail draft in your browser. Review it and press Send yourself. No form information is stored by this static website.</p>
 </form></div></div></main>
 <footer class="site-footer"><a class="brand footer-brand" href="index.html"><img src="assets/logo.svg" alt="" width="30" height="30"><span>DeviceLab<span class="brand-light"> India</span></span></a><p>Independent project · India · Pilot stage</p><div class="footer-links"><a href="devices.html">Devices & testing</a><a href="research.html">Research</a><a href="methodology.html">Methodology</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><p class="copyright">© <span id="year"></span> DeviceLab India.</p></footer>
 <script src="script.js"></script><script>
@@ -21,6 +21,6 @@ form.addEventListener("submit", (event) => {
   const data = new FormData(form);
   const subject = encodeURIComponent("DeviceLab India enquiry: " + data.get("topic"));
   const body = encodeURIComponent("Name: " + data.get("name") + "\nOrganisation: " + data.get("organisation") + "\nReply email: " + data.get("email") + "\n\n" + data.get("message"));
-  window.location.href = "mailto:" + destination + "?subject=" + subject + "&body=" + body;
+  window.open("https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(destination) + "&su=" + subject + "&body=" + body, "_blank", "noopener,noreferrer");
 });
 </script></body></html>
